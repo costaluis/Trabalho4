@@ -11,7 +11,7 @@ carta ** distribui(carta *A, int *n){
 	for(i=0;i<*n;i++){
 		maos[i] = calloc(50,sizeof(carta));
 	}
-	for(i=0;i<7;i++){
+	for(i=0;i<14;i++){
 		for(j=1;j<*n;j++){
 			maos[j][i] = A[k];
 			A[k].valor = 0;

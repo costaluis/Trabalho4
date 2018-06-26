@@ -13,15 +13,25 @@ void criagrupo(int v,carta ** Vetores, carta ** Grupos){
     for(i=0;i<n;i++){
         scanf("%d",&A[i]);
     }
+
+    carta Valores[n];
+    for(i=0;i<n;i++){
+        Valores[i] = Vetores[v][A[i]-1];
+    }
+
+    for(i=0;i<n;i++){
+        if(Valores[i].valor=="*")
+    }
+
     for(i=0;i<n-1;i++){
-        if(Vetores[v][A[i]-1].valor==Vetores[v][A[i+1]-1].valor){
-            c++;
+        for(j=i+1;j<n;j++){
+            if(Valores[i].valor!=Valores[j].valor){
+                printf("Os valores sao diferentes\n");
+                return;
+            }
         }
     }
-    if(c!=(n-1)){
-        printf("Os valores nao sao iguais.");
-        return;
-    }
+
 
     for(i=0;i<n-1;i++){
         for(j=i+1;j<n;j++){

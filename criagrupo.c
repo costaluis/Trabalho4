@@ -4,6 +4,7 @@ void criagrupo(int v,carta ** Vetores, carta ** Grupos){
     int n;
     int i;
     int j;
+    int B[4];
     int c=0;
     int d=0;
     printf("Insira quantas cartas formarao o grupo: ");
@@ -19,8 +20,74 @@ void criagrupo(int v,carta ** Vetores, carta ** Grupos){
         Valores[i] = Vetores[v][A[i]-1];
     }
 
+    for(i=0;i<4;i++){
+        B[i] = 0;
+    }
+
     for(i=0;i<n;i++){
-        if(Valores[i].valor=="*")
+        if(Valores[i].naipe=='@'){
+            B[0] = 1;
+        }else{
+            if(Valores[i].naipe=='$'){
+                B[1] = 1;
+            }else{
+                if(Valores[i].naipe=='!'){
+                    B[2] = 1;
+                }else{
+                    if(Valores[i].naipe=='#'){
+                        B[3] = 1;
+                    }
+                }
+            }
+        }
+    }
+
+    for(i=0;i<n;i++){
+        if(i==0){
+            if(Valores[i].valor=='*'){
+                if(Valores[i+1].valor!='*'){
+                    Valores[i].valor = Valores[i+1].valor;
+                }else{
+                    Valores[i].valor = Valores[i+2].valor;
+                }
+            }
+        }else{
+            if(i==n-1){
+                if(Valores[i].valor=='*'){
+                    Valores[i].valor = Valores[i-1].valor;
+                }
+            }else{
+                if(Valores[i].valor=='*'){
+                    Valores[i].valor = Valores[i-1].valor;
+                }
+            }
+        }
+    }
+
+    for(i=0;i<n;i++){
+        if(Valores[i].naipe=='*'){
+            for(j=0;j<4;j++){
+                if(B[j]==0){
+                    if(j==0){
+                        Valores[i].naipe = '@';
+                        B[j] = 1;
+                    }else{
+                        if(j==1){
+                            Valores[i].naipe = '$';
+                            B[j] = 1;
+                        }else{
+                            if(j==2){
+                                Valores[i].naipe = '!';
+                                B[j] = 1;
+                            }else{
+                                Valores[i].naipe = '#';
+                                B[j] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     for(i=0;i<n-1;i++){

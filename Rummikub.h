@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <time.h>
 
-typedef struct{
+typedef struct carta{
     char valor;
     char naipe;
     int pos;
+    struct carta *prox;
 }carta;
 
 carta * criabaralho();

@@ -78,7 +78,7 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos){
 				break;
 			}
 		}
-		Percorre = Grupos[g];
+		carta * Percorre = Grupos[g];
 		while(Percorre!=NULL){
 			if(Percorre->prox==NULL){
 				Percorre->prox = &Vetores[0][i];
@@ -106,12 +106,12 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos){
 					while(Percorre->prox!=NULL){
 						Percorre = Percorre->prox;
 					}
-					if(*(Percorre).valor=='*'){
-						if(Vetores[v][c].valor==*(Percorre).valor+2){
+					if(Percorre->valor=='*'){
+						if(Vetores[v][c].valor==Percorre->valor+2){
 							f = 3;
 						}
 					}else{
-						if(Vetores[v][c].valor==*(Percorre).valor+1){
+						if(Vetores[v][c].valor==Percorre->valor+1){
 							f = 4;
 						}
 					}

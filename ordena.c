@@ -5,7 +5,7 @@ void ordena(carta ** A, int n){
 	int j;
 	int k;
 	carta temp;
-	for(i=0;i<n;i++){
+	for(i=1;i<n;i++){
 		for(j=0;j<50;j++){
 			for(k=j+1;k<50;k++){
                 if(A[i][j].valor!=0){

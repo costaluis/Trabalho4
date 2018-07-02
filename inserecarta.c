@@ -23,7 +23,7 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos){
 		scanf("%d",&g);
 		g--;
 
-		if(Vetores[v][c].valor==(*(Grupos[g])).valor){
+		if(Vetores[v][c].valor==(*(Grupos[g])).valor || (*Grupos[g]).valor=='*'){
 			carta * Percorre = Grupos[g];
 			while(Percorre!=NULL){
 				if(Percorre->naipe == '@'){

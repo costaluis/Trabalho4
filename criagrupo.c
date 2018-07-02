@@ -134,6 +134,4 @@ void criagrupo(int v,carta ** Vetores, carta ** Grupos){
     for(;c<i;c++){
         Vetores[0][c].prox = &Vetores[0][c+1];
     }
-
-
 }

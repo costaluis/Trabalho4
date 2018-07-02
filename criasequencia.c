@@ -17,7 +17,7 @@ void criasequencia(int v,carta ** Vetores, carta ** Grupos){
 
 	for(i=0;i<n;i++){
 		if(Vetores[v][A[i]-1].valor>='A'&& Vetores[v][A[i]-1].valor <='D'){
-			Valores[i].valor = (Vetores[v][A[i]-1].valor) - 'A' + '0';
+			Valores[i].valor = (Vetores[v][A[i]-1].valor) - 'A' + '0' + 10;
 			Valores[i].naipe = Vetores[v][A[i]-1].naipe;
 		}else{
 			Valores[i] = Vetores[v][A[i]-1];

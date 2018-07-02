@@ -1,10 +1,13 @@
 #include "Rummikub.h"
 
 void jogada(carta ** Vetores,carta *Baralho,carta ** Grupos,int v,int n){
-    system("cls");
     int o;
+    int f=1;
     carta * Card;
     int i;
+    while(1){
+    system("clear");
+    ordena(Vetores,n);
     printf("Mesa:\n");
     for(i=0;i<35;i++){
         if(Grupos[i]!=NULL){
@@ -28,16 +31,43 @@ void jogada(carta ** Vetores,carta *Baralho,carta ** Grupos,int v,int n){
     printf("[1 - Criar Grupo]\n");
     printf("[2 - Criar Sequencia]\n");
     printf("[3 - Inserir Carta em Grupo/Sequencia]\n");
-    printf("[4 - Comprar Carta]\n");
+    printf("[4 - Trocar Carta por Coringa]\n");
+    if(f){
+        printf("[5 - Comprar Carta]\n");
+    }else{
+        printf("[5 - Pular a vez]\n");
+    }
 
     scanf("%d",&o);
 
     switch(o){
     case 1:
-        printf("Insira os valores");
+        criagrupo(v,Vetores,Grupos);
+        f=0;
+        break;
+    case 2:
+        criasequencia(v,Vetores,Grupos);
+        f=0;
+        break;
+    case 3:
+        inserecarta(Vetores,v,Grupos);
+        f=0;
+        break;
+    case 4:
+        troca(Vetores,Grupos,v);
+        f=0;
+        break;
+    case 5:
+        if(f){
+            compra(Baralho,Vetores,v);
+            return;
+        }else{
+            return;
+        }
+        break;
+    default:
+        printf("Valor invalido\n");
+        break;
     }
-
-
-
-
+}
 }

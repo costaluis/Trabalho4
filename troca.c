@@ -7,7 +7,7 @@ void troca(carta ** Vetores,carta ** Grupos,int v,int*f){
 	printf("Digite a posicao da carta que deseja trocar: ");
 	scanf("%d",&p);
 	p--;
-	printf("Digite a posicao do grupo ou sequencia com o curinga: ");
+	printf("Digite a posicao do grupo ou sequencia com o coringa: ");
 	scanf("%d",&g);
 	g--;
 	Percorre = Grupos[g];

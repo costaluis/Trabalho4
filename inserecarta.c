@@ -66,9 +66,6 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos,int*t){
 					}
 				}
 			}
-		}else{
-			printf("A carta nao possui o mesmo valor\n");
-			return;
 		}
 		for(i=0;i<50;i++){
 			if(Vetores[0][i].valor==0){

@@ -1,6 +1,6 @@
 #include "Rummikub.h"
 
-void inserecarta(carta ** Vetores, int v, carta ** Grupos){
+void inserecarta(carta ** Vetores, int v, carta ** Grupos,int*t){
 	int c;
 	int f=0;
 	int g;
@@ -82,6 +82,7 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos){
 		while(Percorre!=NULL){
 			if(Percorre->prox==NULL){
 				Percorre->prox = &Vetores[0][i];
+				*t = 0;
 				break;
 			}
 		}
@@ -136,6 +137,7 @@ void inserecarta(carta ** Vetores, int v, carta ** Grupos){
 						}
 						Percorre->prox = &Vetores[0][i];
 					}
+					*t = 0;
 					break;
 				}
 			}

@@ -1,6 +1,6 @@
 #include "Rummikub.h"
 
-void criagrupo(int v,carta ** Vetores, carta ** Grupos){
+void criagrupo(int v,carta ** Vetores, carta ** Grupos,int*f){
     int n;
     int i;
     int j;
@@ -131,7 +131,8 @@ void criagrupo(int v,carta ** Vetores, carta ** Grupos){
         }
     }
     Grupos[j] = &Vetores[0][c];
-    for(;c<i;c++){
+    for(;c<i-1;c++){
         Vetores[0][c].prox = &Vetores[0][c+1];
     }
+    *f = 0;
 }

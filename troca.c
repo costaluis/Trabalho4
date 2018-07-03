@@ -1,6 +1,6 @@
 #include "Rummikub.h"
 
-void troca(carta ** Vetores,carta ** Grupos,int v){
+void troca(carta ** Vetores,carta ** Grupos,int v,int*f){
 	int p,g;
 	carta temp;
 	carta * Percorre;
@@ -30,6 +30,7 @@ void troca(carta ** Vetores,carta ** Grupos,int v){
 		temp = *Percorre;
 		*Percorre = Vetores[v][p];
 		Vetores[v][p] = temp;
+		*f = 0;
 	}else{
 		if(Percorre->naipe!=Vetores[v][p].naipe){
 			printf("Carta invalida\n");
@@ -46,5 +47,6 @@ void troca(carta ** Vetores,carta ** Grupos,int v){
 		temp = *Percorre;
 		*Percorre = Vetores[v][p];
 		Vetores[v][p] = temp;
+		*f = 0;
 	}
 }

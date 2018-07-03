@@ -5,6 +5,7 @@ void jogada(carta ** Vetores,carta *Baralho,carta ** Grupos,int v,int n){
     int f=1;
     carta * Card;
     int i;
+    system("clear");
     while(1){
     system("clear");
     ordena(Vetores,n);
@@ -42,20 +43,20 @@ void jogada(carta ** Vetores,carta *Baralho,carta ** Grupos,int v,int n){
 
     switch(o){
     case 1:
-        criagrupo(v,Vetores,Grupos);
-        f=0;
+        criagrupo(v,Vetores,Grupos,&f);
+        pausa();
         break;
     case 2:
-        criasequencia(v,Vetores,Grupos);
-        f=0;
+        criasequencia(v,Vetores,Grupos,&f);
+        pausa();
         break;
     case 3:
-        inserecarta(Vetores,v,Grupos);
-        f=0;
+        inserecarta(Vetores,v,Grupos,&f);
+        pausa();
         break;
     case 4:
-        troca(Vetores,Grupos,v);
-        f=0;
+        troca(Vetores,Grupos,v,&f);
+        pausa();
         break;
     case 5:
         if(f){

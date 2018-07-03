@@ -41,7 +41,7 @@ if(v==1){
     }
     return Baralho;
     }else{
-        if(v==0){
+        if(v==2){
             int i;
             char carta[3];
             char nome[20];
